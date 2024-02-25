@@ -1,5 +1,5 @@
 import { SlLoop } from "react-icons/sl";
-import { MdLyrics } from "react-icons/md";
+import { FaMicrophoneAlt } from "react-icons/fa";
 import { TiArrowShuffle } from "react-icons/ti";
 import { TbArrowLoopRight } from "react-icons/tb";
 import React, { useEffect, useState } from "react";
@@ -7,17 +7,18 @@ import { IoMdPlay, IoMdPause } from "react-icons/io";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Box, IconButton, Tooltip } from "@mui/material";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-
-import { useSelector, useDispatch } from "react-redux";
-import { onPausePlay, onPreviousSong, onSelectNextSong, onShowLyrics, toggleSuffle } from "rdx/playlist";
-import LyricsModal from "component/LyricsModal";
-import toast from "react-hot-toast";
 import CreateNewPlaylistMobile from "component/new-playlist/CreateNewPlaylistMobile";
+import { onPausePlay, onPlaySongsInAllPlaylists, onPreviousSong, onRepeatSong, onSelectNextSong, onShowLyrics, toggleSuffle } from "rdx/playlist";
+import { useSelector, useDispatch } from "react-redux";
+import { RiRepeatOneFill } from "react-icons/ri";
+import LyricsModal from "component/LyricsModal";
+import { first, second, third } from "./styles";
+import toast from "react-hot-toast";
 
 const PlayingButtons = () => {
-  const [playing, setPlaying] = useState(false);
   const dispatch = useDispatch();
-  const { currentSong, shuffle, showLyrics } = useSelector((state) => state.playlist);
+  const [playing, setPlaying] = useState(false);
+  const { currentSong, shuffle, showLyrics, loop, suffleAllPlaylists } = useSelector((state) => state.playlist);
   const matches = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
@@ -40,32 +41,24 @@ const PlayingButtons = () => {
     toast.error("No song selected");
   };
 
+  const handleRepeatSingle = () => {
+    if (disabledAllButtons) return;
+    dispatch(onRepeatSong());
+  };
+
+  const handleShuffleAllPlaylists = () => {
+    if (disabledAllButtons) return;
+    dispatch(onPlaySongsInAllPlaylists());
+  };
+
   return (
     <Box
       component={"div"}
-      sx={{
-        width: {
-          xs: "100%",
-          md: "70%"
-        },
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      sx={first}
     >
       <Box
         component={"div"}
-        sx={{
-          width: {
-            xs: "100%",
-            sm: "55%",
-            md: "75%"
-          },
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "20px",
-        }}
+        sx={second}
       >
         <Box>
           {
@@ -82,7 +75,7 @@ const PlayingButtons = () => {
             ) : (
               <Tooltip title="Find Lyrics">
                 <IconButton onClick={handleFindLyrics}>
-                  <MdLyrics size={18} color={showLyrics ? "rgba(32,198,190,1)" : "white"} />
+                  <FaMicrophoneAlt size={18} color={showLyrics ? "rgba(32,198,190,1)" : "white"} />
                 </IconButton>
               </Tooltip>
             )
@@ -91,10 +84,7 @@ const PlayingButtons = () => {
         </Box>
         <Box
           component={"div"}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
+          sx={third}
         >
           <IconButton disabled={disabledAllButtons} onClick={() => dispatch(onPreviousSong({ idx: currentSong.index }))}>
             <GrFormPrevious color={"white"} />
@@ -110,15 +100,28 @@ const PlayingButtons = () => {
         </Box>
         <Box
           component={"div"}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
+          sx={third}
         >
-          <IconButton>
-            <SlLoop disabled={disabledAllButtons} size={18} color="#eee" />
+          <IconButton onClick={handleRepeatSingle}>
+            {
+              loop ? <RiRepeatOneFill size={18} color="rgba(32,198,190,1)" /> : <SlLoop size={18} color="white" />
+            }
           </IconButton>
-          <IconButton>
+          <Tooltip title="Play all songs in all playlists">
+            <IconButton onClick={handleShuffleAllPlaylists}>
+              {
+                suffleAllPlaylists ? <TbArrowLoopRight size={18} color="rgba(32,198,190,1)" /> : <TbArrowLoopRight size={18} color="white" />
+              }
+            </IconButton>
+          </Tooltip>
+          <IconButton
+            sx={{
+              display: {
+                xs: "inline-flex",
+                sm: "none",
+              }
+            }}
+          >
             <TbArrowLoopRight disabled={disabledAllButtons} size={18} color="#eee" />
           </IconButton>
         </Box>

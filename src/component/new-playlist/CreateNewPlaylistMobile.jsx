@@ -1,18 +1,18 @@
+import { useYouTubeSearch } from "pages/dashboard/components/YouTube/useYouTubeSearch";
+import { useManagerSubCollections } from "hooks/useManagerSubCollections";
+import SearchResults from "pages/dashboard/components/SearchResults";
 import { MdCreateNewFolder, MdClose } from "react-icons/md";
 import { Button, IconButton } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useSelector } from "react-redux";
 import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
-import Search from "component/Search";
-import { useYouTubeSearch } from "pages/dashboard/components/YouTube/useYouTubeSearch";
-import SearchResults from "pages/dashboard/components/SearchResults";
-import { v4 } from "uuid";
-import { useManagerSubCollections } from "hooks/useManagerSubCollections";
-import Loader from "component/Loader";
 import { cleaningString } from "helper";
+import Loader from "component/Loader";
+import Search from "component/Search";
+import Box from "@mui/material/Box";
 import toast from "react-hot-toast";
+import { v4 } from "uuid";
 
 const style = {
   position: "absolute",
@@ -128,7 +128,7 @@ const CreateNewPlaylistMobile = () => {
               </button>
             </form>
             <Button sx={{ background: "none" }} onClick={() => setOpen(false)} variant="contained">
-              <MdClose size={18} color="red" />
+              <MdClose size={18} color="rgba(32,198,190,1)" />
             </Button>
           </Box>
           <Box

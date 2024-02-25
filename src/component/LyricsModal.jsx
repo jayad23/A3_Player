@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from "react";
-import { Button, IconButton } from "@mui/material";
-import { MdLyrics } from "react-icons/md";
+import { Button, IconButton, Tooltip } from "@mui/material";
+import { FaMicrophoneAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { CustomTextArea } from "./Lyrics";
+import { MdClose } from "react-icons/md";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import toast from "react-hot-toast";
-import { CustomTextArea } from "./Lyrics";
 
 const style = {
   position: "absolute",
@@ -37,9 +38,11 @@ const LyricsModal = () => {
 
   return (
     <Fragment>
-      <IconButton onClick={handleShowLyrics}>
-        <MdLyrics size={18} color={open ? "rgba(32,198,190,1)" : "white"} />
-      </IconButton>
+      <Tooltip title="Find Lyrics">
+        <IconButton onClick={handleShowLyrics}>
+          <FaMicrophoneAlt size={18} color={open ? "rgba(32,198,190,1)" : "white"} />
+        </IconButton>
+      </Tooltip>
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -55,8 +58,8 @@ const LyricsModal = () => {
               justifyContent: "flex-end",
             }}
           >
-            <Button onClick={() => setOpen(false)} variant="contained" color="error">
-              Close
+            <Button sx={{ bg: "none" }} onClick={() => setOpen(false)} variant="contained">
+              <MdClose size={20} color="rgba(32,198,190,1)" />
             </Button>
           </Box>
           <CustomTextArea

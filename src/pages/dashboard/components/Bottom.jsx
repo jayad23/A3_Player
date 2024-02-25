@@ -27,7 +27,7 @@ const Bottom = () => {
             width: "30%",
             display: {
               xs: "none",
-              md: "inline-flex"
+              sm: "inline-flex"
             }
           }}
         >
@@ -44,7 +44,7 @@ const Bottom = () => {
             }}
           >
             {
-              playlistAction !== null ? "Playlists" : "Create Playlist"
+              playlistAction !== null ? "Playlists" : "Create"
             }
           </Button>
         </Box>
@@ -68,7 +68,8 @@ const Bottom = () => {
               display: {
                 xs: "none",
                 sm: "none",
-                md: "inline-flex"
+                md: "none",
+                lg: "inline-flex"
               }
             }}
           >

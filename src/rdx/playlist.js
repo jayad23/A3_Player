@@ -8,6 +8,7 @@ const initialState = {
 	playsListInformation: null,
 	playlists_videos: [],
 	playlistSelectedToPlay: [],
+	savedPreviousPlaylist: [],
 	playlistSelected: "",
 	currentSong: null,
 	shuffle: false,
@@ -113,6 +114,26 @@ export const playlist = createSlice({
 		onShowLyrics: (state) => {
 			state.showLyrics = !state.showLyrics;
 		},
+		onRepeatSong: (state) => {
+			state.loop = !state.loop;
+		},
+		onPlaySongsInAllPlaylists: (state) => {
+			if (!state.suffleAllPlaylists) {
+				state.loop = false;
+				state.savedPreviousPlaylist = state.playlistSelectedToPlay;
+				const allSongs = [];
+				for (const songs of state.playlists_videos) {
+					allSongs.push(...songs.songs);
+				}
+				state.shuffle = true;
+				state.playlistSelectedToPlay = allSongs;
+				state.suffleAllPlaylists = true;
+				return;
+			}
+			state.shuffle = false;
+			state.playlistSelectedToPlay = state.savedPreviousPlaylist;
+			state.suffleAllPlaylists = false;
+		},
 	},
 });
 export const {
@@ -130,6 +151,8 @@ export const {
 	onSongIsSelected,
 	onPausePlay,
 	onShowLyrics,
+	onRepeatSong,
+	onPlaySongsInAllPlaylists,
 } = playlist.actions;
 
 export default playlist.reducer;

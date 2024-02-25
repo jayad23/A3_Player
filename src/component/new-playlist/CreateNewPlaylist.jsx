@@ -1,14 +1,14 @@
+import { PlaylistForm, FormFieldContainer, FormFieldInput, FormFieldLabel, PictureContainer, CameraIconContainer, PlaylistSubmitButton, SongSelectedBox900 } from "./styled";
+import { useManagerSubCollections } from "hooks/useManagerSubCollections";
 import React, { useRef, useState, useEffect, Fragment } from "react";
-import { MdDelete } from "react-icons/md";
-import { TbCameraPlus } from "react-icons/tb";
+import { PlayListCardContainer } from "pages/dashboard/styled";
+import { onRemoveSong, onResetValues } from "rdx/playlist";
 import { Box, IconButton, Tooltip } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
-import { PlayListCardContainer } from "pages/dashboard/styled";
-import { PlaylistForm, FormFieldContainer, FormFieldInput, FormFieldLabel, PictureContainer, CameraIconContainer, PlaylistSubmitButton, SongSelectedBox900 } from "./styled";
-import { onRemoveSong, onResetValues } from "rdx/playlist";
-import { useManagerSubCollections } from "hooks/useManagerSubCollections";
-import Loader from "component/Loader";
+import { TbCameraPlus } from "react-icons/tb";
+import { MdDelete } from "react-icons/md";
 import { cleaningString } from "helper";
+import Loader from "component/Loader";
 
 const FormField = ({ label, type, value, onChange }) => {
   return (
