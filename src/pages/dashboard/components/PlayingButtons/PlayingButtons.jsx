@@ -61,7 +61,7 @@ const PlayingButtons = () => {
         component={"div"}
         sx={second}
       >
-        <Box>
+        <Box sx={{ display: "flex" }}>
           {
             matches && (
               <CreateNewPlaylistMobile />

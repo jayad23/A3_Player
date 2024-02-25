@@ -18,7 +18,10 @@ export const second = {
 	display: "flex",
 	justifyContent: "center",
 	alignItems: "center",
-	gap: "20px",
+	gap: {
+		xs: "5px",
+		md: "20px",
+	},
 };
 
 export const third = {
