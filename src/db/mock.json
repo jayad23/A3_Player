@@ -1,0 +1,346 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MhkRjX3XHPK9DZbqiiZWRcBpccM",
+  "nextPageToken": "CAoQAA",
+  "regionCode": "ES",
+  "pageInfo": {
+    "totalResults": 601602,
+    "resultsPerPage": 10
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "gbNR3mwms8GYuKJfzHp7SKiFiyY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UdITqp3EmHI"
+      },
+      "snippet": {
+        "publishedAt": "2013-09-15T23:55:24Z",
+        "channelId": "UCDedmKlcV4qoJZOW7H8KhQw",
+        "title": "Los Cafres - Tus ojos (DVD &quot;25 años&quot; Video oficial)",
+        "description": "Suscribite al canal de Popart https://bit.ly/2tXBQvz CONSEGUÍ \"LOS CAFRES - 25 AÑOS DE MÚSICA\" EN TODO EL MUNDO EN: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UdITqp3EmHI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UdITqp3EmHI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UdITqp3EmHI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PopArt Discos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-09-15T23:55:24Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "NUeJGOs97z_B9Ej1EXH5lCVq-tI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VMZKBBJTOvI"
+      },
+      "snippet": {
+        "publishedAt": "2022-12-16T11:00:17Z",
+        "channelId": "UCpUgQAuG-45_DaWiWl-AHIQ",
+        "title": "Los Cafres - 20 Mejores Canciones 2022 - Colección Superior 2022/2023",
+        "description": "Los Cafres - 20 Mejores Canciones 2022 - Colección Superior 2022/2023 Los Cafres - 20 Mejores Canciones 2022 - Colección ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VMZKBBJTOvI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VMZKBBJTOvI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VMZKBBJTOvI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Reggae Éxitos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-12-16T11:00:17Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "XT_3_l8aD_ObFcEThQi8EouR-Kg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7pzb-3YE7C4"
+      },
+      "snippet": {
+        "publishedAt": "2011-09-07T06:28:15Z",
+        "channelId": "UCDedmKlcV4qoJZOW7H8KhQw",
+        "title": "Los Cafres - Casi q` me pierdo (video oficial) HD",
+        "description": "Los Cafres - Casi q` me pierdo (video oficial) HD http://www.popartdiscos.com CONSEGUI \"CASI Q´ ME PIERDO\" EN TODO EL ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7pzb-3YE7C4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7pzb-3YE7C4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7pzb-3YE7C4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PopArt Discos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2011-09-07T06:28:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "935ICnDn6SqIUfneJPyeXVxBPHc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-gR-ZzzBhJs"
+      },
+      "snippet": {
+        "publishedAt": "2016-01-21T15:23:18Z",
+        "channelId": "UCDedmKlcV4qoJZOW7H8KhQw",
+        "title": "Los Cafres - 25 años [DVD FULL, 2012]",
+        "description": "Suscribite al canal de Popart https://bit.ly/2tXBQvz TRACKLIST DVD \"25 AÑOS DE MÚSICA\" : 00:00 El mighty 05:03 Sólo un ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-gR-ZzzBhJs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-gR-ZzzBhJs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-gR-ZzzBhJs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PopArt Discos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-01-21T15:23:18Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "JZs1-GLSYtQtjqTRkEtrCkY0RVY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "B82KmcRzV4I"
+      },
+      "snippet": {
+        "publishedAt": "2020-04-10T23:00:05Z",
+        "channelId": "UCwYRZPm7bDSNK4FgjdBJU4g",
+        "title": "[AHORA] Reviví con nosotros el espectáculo de Los Cafres por sus 25 años en la Usina del Arte.",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/B82KmcRzV4I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/B82KmcRzV4I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/B82KmcRzV4I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "GCBA",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-04-10T23:00:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ZZjww4QyoQqDmnEn0CC0cpHxvFE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "afBhdRSCMSQ"
+      },
+      "snippet": {
+        "publishedAt": "2010-03-31T09:07:19Z",
+        "channelId": "UCDedmKlcV4qoJZOW7H8KhQw",
+        "title": "Los Cafres - Bastara (video oficial) [HD]",
+        "description": "Los Cafres - Bastara (video oficial) http://www.popartdiscos.com Escucha \"Bastará\" en las plataformas digitales: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/afBhdRSCMSQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/afBhdRSCMSQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/afBhdRSCMSQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PopArt Discos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2010-03-31T09:07:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3hecC2i9UaShwGPgRu4lwPuA_2Q",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "WBd77lSqIvw"
+      },
+      "snippet": {
+        "publishedAt": "2016-04-18T20:43:28Z",
+        "channelId": "UCDedmKlcV4qoJZOW7H8KhQw",
+        "title": "Los Cafres - Aire (DVD &quot;25 años de Música&quot;)",
+        "description": "Suscribite al canal de Popart https://bit.ly/2tXBQvz CONSEGUÍ \"25 AÑOS DE MÚSICA\" EN TODO EL MUNDO EN: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WBd77lSqIvw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WBd77lSqIvw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WBd77lSqIvw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PopArt Discos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-04-18T20:43:28Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "I_T9J_1FtxG_caymHYl0f0HF4Cw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "GZnCMGQe6QA"
+      },
+      "snippet": {
+        "publishedAt": "2018-03-09T03:03:48Z",
+        "channelId": "UCDedmKlcV4qoJZOW7H8KhQw",
+        "title": "Los Cafres - Sigo caminando (video oficial)",
+        "description": "Suscribite al canal de Popart https://bit.ly/2tXBQvz Escuchá \"Sigo Caminando\" en tiendas digitales: - Spotify: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GZnCMGQe6QA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GZnCMGQe6QA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GZnCMGQe6QA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PopArt Discos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-03-09T03:03:48Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QUi7iAdHt2OOB2pUH0l6g2sTgGI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hkY9XcCnFzo"
+      },
+      "snippet": {
+        "publishedAt": "2014-10-30T17:26:27Z",
+        "channelId": "UCDedmKlcV4qoJZOW7H8KhQw",
+        "title": "Los Cafres - Si el amor se cae (DVD &quot;25 años de Música&quot; video oficial)",
+        "description": "Suscribite al canal de Popart https://bit.ly/2tXBQvz CONSEGUÍ \"LOS CAFRES - 25 AÑOS DE MÚSICA\" EN TODO EL MUNDO EN: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hkY9XcCnFzo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hkY9XcCnFzo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hkY9XcCnFzo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "PopArt Discos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2014-10-30T17:26:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "geBjK_dEm6AEchlBCjiafUWV0K4",
+      "id": {
+        "kind": "youtube#channel",
+        "channelId": "UCeQ-A7LTWGmN4AIVpVo7u1w"
+      },
+      "snippet": {
+        "publishedAt": "2010-02-03T21:31:07Z",
+        "channelId": "UCeQ-A7LTWGmN4AIVpVo7u1w",
+        "title": "Los Cafres",
+        "description": "Canal Oficial de LOS CAFRES.",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/APkrFKZRbHTW1o2PykEnkvApHh_RgoqrHeSCeSD0tEhKcg=s88-c-k-c0xffffffff-no-rj-mo"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/APkrFKZRbHTW1o2PykEnkvApHh_RgoqrHeSCeSD0tEhKcg=s240-c-k-c0xffffffff-no-rj-mo"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/APkrFKZRbHTW1o2PykEnkvApHh_RgoqrHeSCeSD0tEhKcg=s800-c-k-c0xffffffff-no-rj-mo"
+          }
+        },
+        "channelTitle": "Los Cafres",
+        "liveBroadcastContent": "none",
+        "publishTime": "2010-02-03T21:31:07Z"
+      }
+    }
+  ]
+}

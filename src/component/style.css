@@ -1,0 +1,28 @@
+/* @media screen and (max-width: 320px) {
+  .react-player{
+    height: 189px !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .react-player{
+    height: 181px !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .react-player{
+    height: 504px!important;
+    width: 850px!important;
+  }
+} */
+
+@media screen and (max-width: 530px) {
+  .react-player{
+    height: 274px !important;
+  }
+}
+
+.custom_search_input:-webkit-autofill {
+  background: transparent !important;
+}
