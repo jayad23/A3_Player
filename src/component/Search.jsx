@@ -36,7 +36,7 @@ const Search = ({ startIcon, endIcon, youtube, name, value, handleChange, loadin
       sx={divStyles}
       component={"div"}
     >
-      {startIcon && (<FaSearch />)}
+      {startIcon && (<FaSearch color="white" />)}
       <input
         type="text"
         name={name}

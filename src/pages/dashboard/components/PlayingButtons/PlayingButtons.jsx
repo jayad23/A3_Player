@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { onPausePlay, onPreviousSong, onSelectNextSong, onShowLyrics, toggleSuffle } from "rdx/playlist";
 import LyricsModal from "component/LyricsModal";
 import toast from "react-hot-toast";
+import CreateNewPlaylistMobile from "component/new-playlist/CreateNewPlaylistMobile";
 
 const PlayingButtons = () => {
   const [playing, setPlaying] = useState(false);
@@ -67,6 +68,11 @@ const PlayingButtons = () => {
         }}
       >
         <Box>
+          {
+            matches && (
+              <CreateNewPlaylistMobile />
+            )
+          }
           <IconButton disabled={disabledAllButtons} onClick={() => dispatch(toggleSuffle())}>
             <TiArrowShuffle size={18} color={shuffle ? "rgba(32,198,190,1)" : "white"} />
           </IconButton>

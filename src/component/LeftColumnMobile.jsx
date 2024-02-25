@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useState, Fragment } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { Box, IconButton } from "@mui/material";
+import { onSignOut } from "db/firebaseMethods";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdLogOut } from "react-icons/io";
+import { useNavigate } from "react-router";
 import { onSelectMenu } from "rdx/navmenu";
 import { ModalComponent } from "./Modal";
 
@@ -18,7 +20,7 @@ const LeftColumnMobile = () => {
   const { menuOptions } = useSelector((state) => state.menu);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   // const onManageAction = () => {
   //   if (playlistAction === null) {
   //     setOpen(false);
@@ -32,6 +34,12 @@ const LeftColumnMobile = () => {
     const menuClicked = menu === "music" ? "playlists" : menu;
     dispatch(onSelectMenu(menuClicked));
     setOpen(false);
+  };
+
+  const onSignOutAction = () => {
+    onSignOut();
+    localStorage.removeItem("jwt");
+    return navigate("/auth/login");
   };
 
   return (
@@ -79,7 +87,7 @@ const LeftColumnMobile = () => {
               }
               <Box>
                 <IconButton
-                //onClick={() => dispatch(onManageAction())}
+                  onClick={onSignOutAction}
                 >
                   <IoMdLogOut size={26} />
                 </IconButton>

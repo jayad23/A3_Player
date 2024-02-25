@@ -22,13 +22,22 @@ const SongsCard = ({ length, songName, img, onSelectVideo, videoUrl, theyShouldB
     }
   };
 
+  const onAddSong = () => {
+    if (matches) {
+      setIsAdded(true);
+      onSelectVideo(videoUrl);
+      return setTimeout(() => {
+        setIsAdded(false);
+      }, 2000);
+    }
+  };
+
   return (
     <SongsCardContainer
       style={length === 1 ?
-        { height: "225px", cursor: matches ? "pointer" : "default" } :
-        { cursor: matches ? "pointer" : "default" }
+        { height: "225px", cursor: matches ? "pointer" : "default", border: matches && isAdded ? "1px solid rgba(32, 198, 190, 1)" : "none" } :
+        { cursor: matches ? "pointer" : "default", border: matches && isAdded ? "1px solid rgba(32, 198, 190, 1)" : "none" }
       }
-      onClick={() => matches && onSelectVideo(videoUrl)}
     >
       <SongsInfoWrapper>
         <div
@@ -59,6 +68,7 @@ const SongsCard = ({ length, songName, img, onSelectVideo, videoUrl, theyShouldB
             flexDirection: "column",
             justifyContent: "space-between",
           }}
+          onClick={onAddSong}
         >
           {
             matches ? (

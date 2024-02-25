@@ -8,6 +8,8 @@ export const getRandomIndex = (arreglo, currentIndex) => {
 export const cleaningString = (inputString) => {
 	const patronesAReemplazar = [
 		/\(Video Oficial\)/g,
+		/\(Official Music Video\)/g,
+		/\(Explicit\)/g,
 		/\(Official video\)/g,
 		/\(Official HD Video\)/g,
 		/&amp;/g,
