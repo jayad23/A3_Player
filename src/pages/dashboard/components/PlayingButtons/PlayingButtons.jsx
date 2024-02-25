@@ -20,6 +20,7 @@ const PlayingButtons = () => {
   const [playing, setPlaying] = useState(false);
   const { currentSong, shuffle, showLyrics, loop, suffleAllPlaylists } = useSelector((state) => state.playlist);
   const matches = useMediaQuery("(max-width:600px)");
+  const disabledAllButtons = currentSong === null;
 
   useEffect(() => {
     if (currentSong !== null) {
@@ -28,11 +29,11 @@ const PlayingButtons = () => {
   }, [currentSong]);
 
   const handlePlayPause = () => {
+    if (disabledAllButtons) return;
     setPlaying(!playing);
     dispatch(onPausePlay(playing ? "pause" : "play"));
   };
 
-  const disabledAllButtons = currentSong === null;
 
   const handleFindLyrics = () => {
     if (currentSong !== null) {
@@ -89,7 +90,7 @@ const PlayingButtons = () => {
           <IconButton disabled={disabledAllButtons} onClick={() => dispatch(onPreviousSong({ idx: currentSong.index }))}>
             <GrFormPrevious color={"white"} />
           </IconButton>
-          <IconButton disabled={disabledAllButtons} onClick={handlePlayPause}>
+          <IconButton onClick={handlePlayPause}>
             {
               playing ? <IoMdPause size={30} color="white" /> : <IoMdPlay size={30} color="white" />
             }

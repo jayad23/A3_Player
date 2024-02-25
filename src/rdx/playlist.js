@@ -134,6 +134,20 @@ export const playlist = createSlice({
 			state.playlistSelectedToPlay = state.savedPreviousPlaylist;
 			state.suffleAllPlaylists = false;
 		},
+		onRestartInitialState: (state) => {
+			state.playlistAction = null;
+			state.songsToBeSaved = [];
+			state.playsListInformation = null;
+			state.playlists_videos = [];
+			state.playlistSelectedToPlay = [];
+			state.savedPreviousPlaylist = [];
+			state.playlistSelected = "";
+			state.currentSong = null;
+			state.shuffle = false;
+			(state.loop = false), (state.suffleAllPlaylists = false);
+			state.pause_play = null;
+			state.showLyrics = false;
+		},
 	},
 });
 export const {
@@ -153,6 +167,7 @@ export const {
 	onShowLyrics,
 	onRepeatSong,
 	onPlaySongsInAllPlaylists,
+	onRestartInitialState,
 } = playlist.actions;
 
 export default playlist.reducer;

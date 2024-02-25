@@ -9,6 +9,8 @@ import { IoMdLogOut } from "react-icons/io";
 import { useNavigate } from "react-router";
 import { onSelectMenu } from "rdx/navmenu";
 import { ModalComponent } from "./Modal";
+import { dictionary } from "constants/dictionary";
+import { onRestartInitialState } from "rdx/playlist";
 
 const iconsXsMenu = {
   youtube: FaYoutube,
@@ -34,6 +36,9 @@ const LeftColumnMobile = () => {
     const menuClicked = menu === "music" ? "playlists" : menu;
     dispatch(onSelectMenu(menuClicked));
     setOpen(false);
+    if (menu === dictionary.youtube) {
+      dispatch(onRestartInitialState());
+    }
   };
 
   const onSignOutAction = () => {
