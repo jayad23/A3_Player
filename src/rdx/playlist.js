@@ -144,7 +144,8 @@ export const playlist = createSlice({
 			state.playlistSelected = "";
 			state.currentSong = null;
 			state.shuffle = false;
-			(state.loop = false), (state.suffleAllPlaylists = false);
+			state.loop = false;
+			state.suffleAllPlaylists = false;
 			state.pause_play = null;
 			state.showLyrics = false;
 		},
