@@ -20,10 +20,10 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   //top: 0,
-  width: 500,
+  width: "90%",
   bgcolor: "#000000c5",
   //height: "100%",
-  height: "79vh",
+  height: "82vh",
   overflow: "hidden",
   //border: "2px solid rgba(32,198,190,1)",
   boxShadow: 24,
@@ -189,8 +189,11 @@ const CreateNewPlaylistMobile = () => {
                   padding: "8px",
                   borderRadius: "6px",
                   outline: "none",
-                  autoComplete: "off",
                 }}
+                autoComplete="off"
+                type="text"
+                value={newPlaylistValues.playlistName}
+                onChange={(e) => setNewPlaylistValues({ ...newPlaylistValues, playlistName: e.target.value })}
               />
             </Box>
             <Box
@@ -261,7 +264,7 @@ const CreateNewPlaylistMobile = () => {
             component="section"
             sx={{
               mt: 2,
-              height: "250px",
+              height: "200px",
               overflow: "auto",
               "&::-webkit-scrollbar": {
                 display: "none",

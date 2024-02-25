@@ -100,7 +100,10 @@ const PlayingButtons = () => {
         </Box>
         <Box
           component={"div"}
-          sx={third}
+          sx={{
+            ...third,
+            mr: 2
+          }}
         >
           <IconButton onClick={handleRepeatSingle}>
             {
@@ -117,7 +120,7 @@ const PlayingButtons = () => {
           <IconButton
             sx={{
               display: {
-                xs: "inline-flex",
+                xs: "none",
                 sm: "none",
               }
             }}
