@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
 import { SlLoop } from "react-icons/sl";
 import { MdLyrics } from "react-icons/md";
-import { Box, IconButton, Tooltip } from "@mui/material";
 import { TiArrowShuffle } from "react-icons/ti";
 import { TbArrowLoopRight } from "react-icons/tb";
+import React, { useEffect, useState } from "react";
 import { IoMdPlay, IoMdPause } from "react-icons/io";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Box, IconButton, Tooltip } from "@mui/material";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 import { useSelector, useDispatch } from "react-redux";
 import { onPausePlay, onPreviousSong, onSelectNextSong, onShowLyrics, toggleSuffle } from "rdx/playlist";
+import LyricsModal from "component/LyricsModal";
+import toast from "react-hot-toast";
 
 const PlayingButtons = () => {
   const [playing, setPlaying] = useState(false);
   const dispatch = useDispatch();
   const { currentSong, shuffle, showLyrics } = useSelector((state) => state.playlist);
+  const matches = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     if (currentSong !== null) {
@@ -27,6 +31,13 @@ const PlayingButtons = () => {
   };
 
   const disabledAllButtons = currentSong === null;
+
+  const handleFindLyrics = () => {
+    if (currentSong !== null) {
+      return dispatch(onShowLyrics());
+    }
+    toast.error("No song selected");
+  };
 
   return (
     <Box
@@ -60,13 +71,11 @@ const PlayingButtons = () => {
             <TiArrowShuffle size={18} color={shuffle ? "rgba(32,198,190,1)" : "white"} />
           </IconButton>
           {
-            disabledAllButtons ? (
-              <IconButton>
-                <MdLyrics size={18} color={showLyrics ? "rgba(32,198,190,1)" : "white"} />
-              </IconButton>
+            matches ? (
+              <LyricsModal />
             ) : (
               <Tooltip title="Find Lyrics">
-                <IconButton onClick={() => dispatch(onShowLyrics())}>
+                <IconButton onClick={handleFindLyrics}>
                   <MdLyrics size={18} color={showLyrics ? "rgba(32,198,190,1)" : "white"} />
                 </IconButton>
               </Tooltip>
