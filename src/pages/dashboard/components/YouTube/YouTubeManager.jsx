@@ -9,6 +9,7 @@ import { IconButton, Tooltip } from "@mui/material";
 import { useYouTubeSearch } from "./useYouTubeSearch";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { PlayListCardContainer } from "pages/dashboard/styled";
+import LayoutShift from "component/LayoutShift";
 
 const SearchCard = ({ searchValue, handleSelectSavedResults }) => (
   <PlayListCardContainer onClick={() => handleSelectSavedResults(searchValue)}>
@@ -36,6 +37,7 @@ const YouTubeManager = () => {
   return (
     <Fragment>
       <div style={{ display: "flex", gap: "10px", width: "100%" }}>
+        <LayoutShift />
         <Tooltip title="Show prev results">
           <IconButton onClick={onGoBack}>
             <GrFormPreviousLink size={16} color="white" />
@@ -57,7 +59,6 @@ const YouTubeManager = () => {
           </button>
         </form>
       </div>
-
       {
         selectedVideoUrl && (
           <Youtube

@@ -1,8 +1,11 @@
 import React from "react";
 import { Box } from "@mui/material";
 import ReactPlayer from "react-player";
+import { useSelector } from "react-redux";
 
 const Youtube = ({ url, isMobile }) => {
+  const { videoPlayerStyles, revertPlaylistWithSearch } = useSelector((state) => state.layout);
+
   const height = isMobile ?
     "287vh" :
     {
@@ -14,7 +17,7 @@ const Youtube = ({ url, isMobile }) => {
   return (
     <Box
       component={"div"}
-      sx={{
+      sx={revertPlaylistWithSearch ? videoPlayerStyles : {
         // width: "100%",
         height: height,
       }}

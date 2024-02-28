@@ -182,7 +182,7 @@ const MusicManager = () => {
           }
         </Box>
       </MusicLeftContainer>
-      <MusicRightContainer style={revertPlaylistWithSearch ? { width: "10%" } : {}}>
+      <MusicRightContainer style={revertPlaylistWithSearch ? { width: `calc(100% - ${musicLeftContainer.width})` } : {}}>
         {
           revertPlaylistWithSearch && (
             <Box

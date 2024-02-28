@@ -32,10 +32,10 @@ export const layoutSlice = createSlice({
 				height: "100vh",
 			};
 			state.musicLeftContainer = {
-				width: "90%",
+				width: "83%",
 			};
 			state.videoPlayerStyles = {
-				height: "100vh",
+				height: "97vh",
 				position: "relative",
 			};
 			state.playingInformation = {
