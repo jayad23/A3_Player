@@ -4,13 +4,15 @@ import playlistReducer from "./playlist";
 import counterReducer from "./counter";
 import menuReducer from "./navmenu";
 import authReducer from "./auth";
+import layout from "./layout";
 
 export const store = configureStore({
 	reducer: {
-		counter: counterReducer,
-		authentication: authReducer,
+		layout: layout,
 		menu: menuReducer,
-		prevSearches: prevSearchesReducer,
+		counter: counterReducer,
 		playlist: playlistReducer,
+		authentication: authReducer,
+		prevSearches: prevSearchesReducer,
 	},
 });

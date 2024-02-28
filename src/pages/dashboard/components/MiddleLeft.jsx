@@ -56,6 +56,7 @@ const PlaylistCard = ({ songName, img, songs }) => {
 
 const MiddleLeft = ({ width }) => {
   const { playlistAction, currentSong, playlistSelected, showLyrics } = useSelector((state) => state.playlist);
+  const { middleLeftGlassedColumn } = useSelector((state) => state.layout);
   const { data } = useManagerSubCollections("playlists_videos");
   const [search, setSearch] = useState("");
 
@@ -64,6 +65,7 @@ const MiddleLeft = ({ width }) => {
       width={width}
       overflow="hidden"
       direction="column"
+      style={middleLeftGlassedColumn}
     >
       {
         showLyrics && currentSong !== null && (

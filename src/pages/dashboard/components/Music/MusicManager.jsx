@@ -9,6 +9,8 @@ import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
 import music_playing from "assets/music_playing.gif";
 import { MusicLeftContainer, MusicRightContainer, PlayListCardContainer } from "../../styled";
 import { ImgTextWrapper, MusicManagerMainContainer, SearchResultContainer, SongInformationWrapper, SongNameAndSearchContainer, SongNameContainer, songCardContainer, songImage, textWrapper } from "./styled";
+import LayoutShift from "component/LayoutShift";
+import { useSelector } from "react-redux";
 
 const PlaylistCard = ({ id, songName, img, onSongSelected, currentSong }) => {
   const update = currentSong === songName;
@@ -113,16 +115,15 @@ const MusicManager = () => {
     searchResults,
     onSelectSongFromSearch
   } = useMusicManager();
-
+  const { musicLeftContainer, videoPlayerStyles, playingInformation, revertPlaylistWithSearch } = useSelector((state) => state.layout);
   return (
     <MusicManagerMainContainer>
-      <MusicLeftContainer>
+      <MusicLeftContainer
+        style={musicLeftContainer}
+      >
         <Box
           component={"div"}
-          sx={{
-            height: "46.5vh",
-            //border: "1px solid blue" 
-          }}
+          sx={videoPlayerStyles}
         >
           {
             currentSong && (
@@ -139,10 +140,12 @@ const MusicManager = () => {
               />
             )
           }
+          <LayoutShift />
         </Box>
         <Box
           component="article"
           sx={SongNameAndSearchContainer}
+          style={playingInformation.currentSong}
         >
           {
             currentSong && (
@@ -163,6 +166,7 @@ const MusicManager = () => {
         <Box
           component={"div"}
           sx={songCardContainer}
+          style={playingInformation.songsCard}
         >
           {
             playlistSelectedToPlay.filter(song => song.songName.toLowerCase().includes(findSong.toLowerCase())).map((song) => (
@@ -178,7 +182,28 @@ const MusicManager = () => {
           }
         </Box>
       </MusicLeftContainer>
-      <MusicRightContainer>
+      <MusicRightContainer style={revertPlaylistWithSearch ? { width: "10%" } : {}}>
+        {
+          revertPlaylistWithSearch && (
+            <Box
+              component={"div"}
+              sx={{ ...songCardContainer, height: "auto", maxHeight: "50%" }}
+            >
+              {
+                playlistSelectedToPlay.filter(song => song.songName.toLowerCase().includes(findSong.toLowerCase())).map((song) => (
+                  <SongCard
+                    key={song.id}
+                    id={song.id}
+                    img={song.img}
+                    songName={song.songName}
+                    currentSong={currentSong?.name}
+                    onSongSelected={onSongSelected}
+                  />
+                ))
+              }
+            </Box>
+          )
+        }
         <form
           onSubmit={onSearch}
           style={{ marginBottom: "10px" }}

@@ -13,12 +13,14 @@ const ComponentRenderer = {
 
 const MiddleRight = ({ width }) => {
   const { menuSelected } = useSelector((state) => state.menu);
+  const { middleRightGlassedColumn } = useSelector((state) => state.layout);
 
   return (
     <GlassedColumn
       width={width}
       direction="column"
       overflow="hidden"
+      style={middleRightGlassedColumn}
     >
       {menuSelected === "playlists" && width === "100%" && (
         <MiddleLeft width="100%" />
