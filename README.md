@@ -34,6 +34,6 @@ Feel free to fork, and please give the repo a star.
 
 
 
-![logo](https://res.cloudinary.com/dnqfh2chg/image/upload/v1692886911/apren-dev_logo_nv69q9.png)
+![logo](https://ibb.co/vQ6w47T)
 
 [Visita nuestra web](https://a3-music-player.vercel.app/auth/login)
