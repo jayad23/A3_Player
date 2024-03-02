@@ -33,18 +33,18 @@ const Top = () => {
           }}
         >
           {
-            menuOptions.map(({ name, bg_default, disabled }) => (
+            menuOptions.map(({ name, bg_default, disabled, show }) => (
               <Button
                 key={name}
                 disabled={disabled}
                 variant="contained"
                 sx={{
+                  display: `${show ? "inline-flex" : "none"}`,
                   backgroundColor: `${menuSelected === name ? bg_default : "black"}`,
                   color: "white",
                   transition: "all 0.3s ease-in-out",
                   "&:hover": {
                     backgroundColor: `${bg_default}`,
-
                   },
                 }}
                 onClick={() => dispatch(onSelectMenu(name))}

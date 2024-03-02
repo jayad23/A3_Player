@@ -4,7 +4,7 @@ import SearchResults from "../dashboard/components/SearchResults";
 
 const Admin = () => {
   console.log(existingData);
-  const data = existingData["Soda Stereo"];
+  const data = existingData["Alkolyricoz"];
   console.log("Kz: 🏈 ~ Admin ~ data:", data.songs);
   const handleSongSelected = (value) => {
     console.log("Song selected: ", value);
