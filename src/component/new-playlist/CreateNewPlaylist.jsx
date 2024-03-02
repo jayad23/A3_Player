@@ -9,6 +9,7 @@ import { TbCameraPlus } from "react-icons/tb";
 import { MdDelete } from "react-icons/md";
 import { cleaningString } from "helper";
 import Loader from "component/Loader";
+import { v4 } from "uuid";
 
 const FormField = ({ label, type, value, onChange }) => {
   return (
@@ -82,8 +83,11 @@ const CreateNewPlaylist = ({ isMobile }) => {
   };
 
   const handleManagerAction = () => {
-    onUpdatePlaylistsVideos(playlistName, {
+    const playlistId = playsListInformation?.playlistId || v4();
+    onUpdatePlaylistsVideos(playlistId, {
+      id: playlistId,
       thumbnail: image.url,
+      name: playlistName,
       songs: songsToBeSaved.map(el => ({
         ...el,
         songName: cleaningString(el.songName),

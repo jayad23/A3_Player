@@ -1,14 +1,19 @@
 //import { v4 } from "uuid";
-import { addNewValue, getCollection } from "db/firebaseMethods";
+import {
+	//addNewValue,
+	getCollection,
+	onUpdateSubCollectionById,
+} from "db/firebaseMethods";
 import { getDocs } from "firebase/firestore";
 import { onPopulateData } from "rdx/playlist";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+//import toast from "react-hot-toast";
 import { useSelector, useDispatch } from "react-redux";
 
 export const useManagerSubCollections = (sub_collection) => {
 	const { userId } = useSelector((state) => state.authentication);
-	const { playlists_videos, playlistAction } = useSelector((state) => state.playlist);
+	//playlistAction
+	const { playlists_videos } = useSelector((state) => state.playlist);
 	const [loading, setLoading] = useState(false);
 
 	const dispatch = useDispatch();
@@ -17,45 +22,20 @@ export const useManagerSubCollections = (sub_collection) => {
 		const playlist_col = getCollection(userId);
 		const collection = await getDocs(playlist_col);
 		const documents = collection.docs.map((doc) => doc.data());
-		let playlists_names = {};
-		for (const i of documents) {
-			if (i.playlists_videos) {
-				playlists_names = i.playlists_videos;
-			}
-		}
-		return playlists_names;
-	};
-
-	const onGetSubCollection = async () => {
-		const playlists = await onGetPlaylistsVideosData();
-		const names = Object.keys(playlists);
-		const dt = names.map((name) => ({ name, ...playlists[name] }));
-		dispatch(onPopulateData(dt));
+		const docs = documents.filter((doc) => !doc.authorized);
+		dispatch(onPopulateData(docs));
+		setLoading(false);
 	};
 
 	const onUpdatePlaylistsVideos = async (playlist, incoming_data) => {
 		setLoading(true);
-		const playlists = await onGetPlaylistsVideosData();
-		const payload = {
-			...playlists,
-			[playlist]: incoming_data,
-		};
-		addNewValue(userId, "playlists_videos", {
-			playlists_videos: payload,
-		})
-			.then(() => {
-				setLoading(false);
-				onGetSubCollection(sub_collection);
-				toast.success(`Playlist ${playlistAction} successfully!`);
-			})
-			.catch((error) => {
-				console.log("Kz: 🚀 ~ onUpdatePlaylistsVideos ~ error", error);
-				setLoading(false);
-			});
+		await onUpdateSubCollectionById(userId, playlist, incoming_data).then(() => {
+			onGetPlaylistsVideosData();
+		});
 	};
 
 	useEffect(() => {
-		onGetSubCollection(sub_collection);
+		onGetPlaylistsVideosData();
 	}, [sub_collection]);
 
 	return {
