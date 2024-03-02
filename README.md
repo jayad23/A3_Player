@@ -34,6 +34,6 @@ Feel free to fork, and please give the repo a star.
 
 
 
-![logo](https://ibb.co/vQ6w47T)
+![logo](https://i.ibb.co/fnz1dhy/ai-globe.gif)
 
 [Visita nuestra web](https://a3-music-player.vercel.app/auth/login)
