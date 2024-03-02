@@ -5,10 +5,12 @@ import { GlassedColumn } from "../styled";
 import MusicManager from "./Music/MusicManager";
 import { dictionary } from "constants/dictionary";
 import YouTubeManager from "./YouTube/YouTubeManager";
+import Admin from "pages/admin/Admin";
 
 const ComponentRenderer = {
   [dictionary.youtube]: <YouTubeManager />,
   [dictionary.music]: <MusicManager />,
+  [dictionary.admin]: <Admin />
 };
 
 const MiddleRight = ({ width }) => {

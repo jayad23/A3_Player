@@ -143,6 +143,9 @@ const CreateNewPlaylist = ({ isMobile }) => {
         <Box
           component={"div"}
           sx={{ width: { xs: "100%", lg: "55%" } }}>
+          <FormFieldLabel>
+            Songs selected: {songsToBeSaved.length}
+          </FormFieldLabel>
           <FormField
             label="Playlist name"
             type="text"

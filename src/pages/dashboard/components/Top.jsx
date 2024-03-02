@@ -4,17 +4,14 @@ import { Box, Button, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, GlassedContainerTop } from "../styled";
 import { FaYoutube, FaMusic, FaSpotify } from "react-icons/fa";
+import { MdAdminPanelSettings } from "react-icons/md";
 import LeftColumnMobile from "component/LeftColumnMobile";
-// import { CiMenuBurger } from "react-icons/ci";
-// import { ModalComponent } from "component/Modal";
-// import { AiOutlineClose } from "react-icons/ai";
-// import { FcHeadset } from "react-icons/fc";
-// import { dictionary } from "constants/dictionary";
 
 const icons = {
   "youtube": <FaYoutube color="white" />,
   "music": <FaMusic color="white" />,
   "spotify": <FaSpotify color="white" />,
+  "admin": <MdAdminPanelSettings color="white" />,
 };
 
 

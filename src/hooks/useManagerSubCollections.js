@@ -22,6 +22,7 @@ export const useManagerSubCollections = (sub_collection) => {
 		const playlist_col = getCollection(userId);
 		const collection = await getDocs(playlist_col);
 		const documents = collection.docs.map((doc) => doc.data());
+		console.log("Kz: 🏈 ~ onGetPlaylistsVideosData ~ documents:", documents);
 		const docs = documents.filter((doc) => !doc.authorized);
 		dispatch(onPopulateData(docs));
 		setLoading(false);

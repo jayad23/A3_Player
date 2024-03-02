@@ -3,4 +3,5 @@ export const dictionary = {
 	music: "music",
 	spotify: "spotify",
 	home: "home",
+	admin: "admin",
 };

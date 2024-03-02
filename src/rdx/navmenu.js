@@ -22,6 +22,12 @@ const initialState = {
 			bg_hover: "#43d430",
 			disabled: true,
 		},
+		{
+			name: dictionary.admin,
+			bg_default: "#288508",
+			bg_hover: "#43d430",
+			disabled: localStorage.getItem("userId") !== "iamkikevanegas",
+		},
 	],
 };
 

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import AuthLayout from "pages/auth/Layout";
-import Dashboard from "pages/dashboard/Dashboard";
-import { useValidJWT } from "hooks/useValidateJWT";
+import React, { useState, useEffect, Suspense, lazy } from "react";
+const Dashboard = lazy(() => import("pages/dashboard/Dashboard"));
 import { AccountBox } from "pages/auth/components/accountBox";
+const AuthLayout = lazy(() => import("pages/auth/Layout"));
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useValidJWT } from "hooks/useValidateJWT";
 import { useNavigate } from "react-router-dom";
+import Loading from "pages/info/Loading";
 
 
 export const AppRouter = () => {
@@ -31,17 +32,19 @@ export const AppRouter = () => {
   }, [tokenChanged]);
 
   return (
-    <Routes>
-      {
-        isTokenValid ? (
-          <Route path="/dashboard" element={<Dashboard />} />
-        ) : (
-          <Route path="/auth" element={<AuthLayout />} >
-            <Route path="login" element={<AccountBox />} />
-          </Route>
-        )
-      }
-      <Route path="*" element={<Navigate to={defaultRoute} />} />
-    </Routes>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        {
+          isTokenValid ? (
+            <Route path="/dashboard" element={<Dashboard />} />
+          ) : (
+            <Route path="/auth" element={<AuthLayout />} >
+              <Route path="login" element={<AccountBox />} />
+            </Route>
+          )
+        }
+        <Route path="*" element={<Navigate to={defaultRoute} />} />
+      </Routes>
+    </Suspense>
   );
 };
