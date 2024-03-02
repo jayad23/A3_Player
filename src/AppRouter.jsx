@@ -1,11 +1,11 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
-const Dashboard = lazy(() => import("pages/dashboard/Dashboard"));
 import { AccountBox } from "pages/auth/components/accountBox";
-const AuthLayout = lazy(() => import("pages/auth/Layout"));
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useValidJWT } from "hooks/useValidateJWT";
 import { useNavigate } from "react-router-dom";
 import Loading from "pages/info/Loading";
+const AuthLayout = lazy(() => import("pages/auth/Layout"));
+const Dashboard = lazy(() => import("pages/dashboard/Dashboard"));
 
 
 export const AppRouter = () => {
