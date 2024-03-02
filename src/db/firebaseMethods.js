@@ -88,28 +88,19 @@ export const getById = async ({ name, id }) => {
 	}
 };
 
-export const onUpdateSubCollectionById = async (userId, document, element, data) => {
-	//endpoint, documentId, data
-	// return new Promise((resolve, reject) => {
-	// 	try {
-	// 		const performUpdate = async () => {
-	// 			await setDoc(doc(db, endpoint, documentId), data);
-	// 		};
-	// 		performUpdate();
-	// 		resolve("Document updated successfully");
-	// 	} catch (error) {
-	// 		console.log("there is an error", error);
-	// 		reject(error);
-	// 	}
-	// });
-	db.collection(userId)
-		.doc(document)
-		.update({
-			[element]: data,
-		})
-		.then(function () {
-			console.log("Frank food updated");
-		});
+export const onUpdateSubCollectionById = async (userId, document, data) => {
+	return new Promise((resolve, reject) => {
+		try {
+			const performUpdate = async () => {
+				await setDoc(doc(db, userId, document), data);
+			};
+			performUpdate();
+			resolve("Document updated successfully");
+		} catch (error) {
+			console.log("there is an error", error);
+			reject(error);
+		}
+	});
 };
 
 export const onDelete = async (endpoint, id) => {

@@ -34,6 +34,7 @@ export const playlist = createSlice({
 					name: payload.img,
 					url: payload.img,
 				},
+				playlistId: payload.playlistId,
 			};
 			state.songsToBeSaved = payload.songs || [];
 		},

@@ -27,7 +27,7 @@ This is an important aspect because here's where you can contribute.
 - Any improvement is welcome as long as it's organized, maintainable, and HQ.
 
 To get it to start, you will need to create your Firebase app, and store the credentials in your local .env file
-Merges to /main are restricted to me. So please, make your PR's pointing at Development
+Merges to /main are restricted to me. So please, make your PR's pointing at development
 
 
 Feel free to fork, and please give the repo a star.

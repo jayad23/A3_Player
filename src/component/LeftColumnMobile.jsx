@@ -10,12 +10,14 @@ import { useNavigate } from "react-router";
 import { onSelectMenu } from "rdx/navmenu";
 import { ModalComponent } from "./Modal";
 import { dictionary } from "constants/dictionary";
+import { MdAdminPanelSettings } from "react-icons/md";
 import { onRestartInitialState } from "rdx/playlist";
 
 const iconsXsMenu = {
   youtube: FaYoutube,
   music: FaMusic,
-  spotify: FaSpotify
+  spotify: FaSpotify,
+  admin: MdAdminPanelSettings
 };
 
 const LeftColumnMobile = () => {
@@ -80,10 +82,11 @@ const LeftColumnMobile = () => {
               }}
             >
               {
-                menuOptions.filter(el => el.name !== "spotify").map(({ name, bg_default, disabled }) => (
+                menuOptions.filter(el => el.name !== "spotify").map(({ name, bg_default, disabled, show }) => (
                   <IconButton
                     key={name}
                     disabled={disabled}
+                    sx={{ display: `${show ? "inline-flex" : "none"}` }}
                     onClick={() => onHandleMenu(name)}
                   >
                     {iconsXsMenu[name]({ color: bg_default })}

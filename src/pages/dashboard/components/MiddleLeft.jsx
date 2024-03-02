@@ -12,12 +12,17 @@ import { useManagerSubCollections } from "hooks/useManagerSubCollections";
 import { onSelectMenu } from "rdx/navmenu";
 import { dictionary } from "constants/dictionary";
 import { CustomTextArea } from "component/Lyrics";
+import toast from "react-hot-toast";
 
-const PlaylistCard = ({ songName, img, songs }) => {
+const PlaylistCard = ({ songName, img, songs, playlistId }) => {
   const dispatch = useDispatch();
   const { playlistSelected } = useSelector((state) => state.playlist);
 
   const onPlayPauseAction = (name) => {
+    if (songs.length === 0) {
+      toast.error("No songs to play");
+      return;
+    }
     dispatch(onSelectPlaylistToPlay(name));
     dispatch(onSelectMenu(dictionary.music));
   };
@@ -45,7 +50,7 @@ const PlaylistCard = ({ songName, img, songs }) => {
           </IconButton>
         </Tooltip>
         <Tooltip title="Edit">
-          <IconButton onClick={() => dispatch(onUpdatePlaylist({ songName, img, songs }))}>
+          <IconButton onClick={() => dispatch(onUpdatePlaylist({ songName, img, songs, playlistId }))}>
             <BsCreditCard2FrontFill color="white" size={20} />
           </IconButton>
         </Tooltip>
@@ -119,6 +124,7 @@ const MiddleLeft = ({ width }) => {
                   <PlaylistCard
                     key={index}
                     songs={item.songs}
+                    playlistId={item.id}
                     img={item.thumbnail}
                     songName={item.name}
                   />

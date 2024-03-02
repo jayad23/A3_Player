@@ -4,17 +4,14 @@ import { Box, Button, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, GlassedContainerTop } from "../styled";
 import { FaYoutube, FaMusic, FaSpotify } from "react-icons/fa";
+import { MdAdminPanelSettings } from "react-icons/md";
 import LeftColumnMobile from "component/LeftColumnMobile";
-// import { CiMenuBurger } from "react-icons/ci";
-// import { ModalComponent } from "component/Modal";
-// import { AiOutlineClose } from "react-icons/ai";
-// import { FcHeadset } from "react-icons/fc";
-// import { dictionary } from "constants/dictionary";
 
 const icons = {
   "youtube": <FaYoutube color="white" />,
   "music": <FaMusic color="white" />,
   "spotify": <FaSpotify color="white" />,
+  "admin": <MdAdminPanelSettings color="white" />,
 };
 
 
@@ -36,18 +33,18 @@ const Top = () => {
           }}
         >
           {
-            menuOptions.map(({ name, bg_default, disabled }) => (
+            menuOptions.map(({ name, bg_default, disabled, show }) => (
               <Button
                 key={name}
                 disabled={disabled}
                 variant="contained"
                 sx={{
+                  display: `${show ? "inline-flex" : "none"}`,
                   backgroundColor: `${menuSelected === name ? bg_default : "black"}`,
                   color: "white",
                   transition: "all 0.3s ease-in-out",
                   "&:hover": {
                     backgroundColor: `${bg_default}`,
-
                   },
                 }}
                 onClick={() => dispatch(onSelectMenu(name))}
