@@ -14,7 +14,7 @@ export const FormFieldContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export const FormFieldLabel = styled.span`
+export const FormFieldLabel = styled.label`
   font-size: 11px;
   text-transform: uppercase;
   font-weight: bold;
@@ -97,3 +97,40 @@ export const PlaylistSubmitButton = styled.button`
   };
   width: 100%;
 `;
+
+export const playlistContainerSx = {
+  width: "100%",
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+};
+
+export const firstBoxSx = {
+  width: { xs: "100%", lg: "40%" },
+  marginBottom: { xs: "10px", lg: "0px" }
+};
+
+export const divAsForm = { width: { xs: "100%", lg: "55%" }, position: "relative" };
+
+export const songsCounterBoxSx = {
+  position: "absolute",
+  width: "25px",
+  height: "25px",
+  borderRadius: "50%",
+  backgroundColor: "#b2ff00",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  right: 0,
+  top: "-7px",
+};
+
+export const spanCount = { fontSize: "10px", color: "black", fontWeight: "bolder" };
+
+export const divInMobile = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "space-between",
+  gap: "10px",
+  marginTop: "10px"
+};

@@ -1,4 +1,4 @@
-import { PlaylistForm, FormFieldContainer, FormFieldInput, FormFieldLabel, PictureContainer, CameraIconContainer, PlaylistSubmitButton, SongSelectedBox900 } from "./styled";
+import { PlaylistForm, FormFieldContainer, FormFieldInput, FormFieldLabel, PictureContainer, CameraIconContainer, PlaylistSubmitButton, SongSelectedBox900, playlistContainerSx, firstBoxSx, divAsForm, songsCounterBoxSx, spanCount, divInMobile } from "./styled";
 import { useManagerSubCollections } from "hooks/useManagerSubCollections";
 import React, { useRef, useState, useEffect, Fragment } from "react";
 import { PlayListCardContainer } from "pages/dashboard/styled";
@@ -11,13 +11,14 @@ import { cleaningString } from "helper";
 import Loader from "component/Loader";
 import { v4 } from "uuid";
 
-const FormField = ({ label, type, value, onChange }) => {
+const FormField = ({ id, label, type, value, onChange }) => {
   return (
     <FormFieldContainer>
-      <FormFieldLabel>
+      <FormFieldLabel htmlFor={id}>
         {label}
       </FormFieldLabel>
       <FormFieldInput
+        id={id}
         type={type}
         value={value}
         onChange={onChange}
@@ -103,19 +104,11 @@ const CreateNewPlaylist = ({ isMobile }) => {
     <PlaylistForm>
       <Box
         component={"div"}
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
+        sx={playlistContainerSx}
       >
         <Box
           component={"div"}
-          sx={{
-            width: { xs: "100%", lg: "40%" },
-            marginBottom: { xs: "10px", lg: "0px" }
-          }}
+          sx={firstBoxSx}
         >
           <PictureContainer onClick={handleImageClick}>
             <CameraIconContainer style={image.url ? { height: "130px" } : {}} >
@@ -142,19 +135,24 @@ const CreateNewPlaylist = ({ isMobile }) => {
         </Box>
         <Box
           component={"div"}
-          sx={{ width: { xs: "100%", lg: "55%" } }}>
-          <FormFieldLabel>
-            Songs selected: {songsToBeSaved.length}
-          </FormFieldLabel>
+          sx={divAsForm}>
+          <Box
+            component={"div"}
+            sx={songsCounterBoxSx}
+          >
+            <span style={spanCount}>{songsToBeSaved.length}</span>
+          </Box>
           <FormField
-            label="Playlist name"
             type="text"
+            id="playlistName"
+            label="Playlist name"
             value={playlistName}
             onChange={(e) => setPlaylistName(e.target.value)}
           />
           <FormField
-            label="Image URL"
             type="text"
+            id="imageUrl"
+            label="Image URL"
             value={image.name}
             onChange={(e) => handleImageUrl(e.target.value)}
           />
@@ -176,13 +174,7 @@ const CreateNewPlaylist = ({ isMobile }) => {
         isMobile ? (
           <Box
             component={"div"}
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "10px",
-              marginTop: "10px"
-            }}
+            sx={divInMobile}
           >
             <PlaylistSubmitButton
               type="button"
