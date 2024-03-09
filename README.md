@@ -36,4 +36,4 @@ Feel free to fork, and please give the repo a star.
 
 ![logo](https://i.ibb.co/bQp5Tqz/android-chrome-512x512.png)
 
-[Visita nuestra web](https://a3-music-player.vercel.app/auth/login)
+[Visit our site](https://a3-music-player.vercel.app/auth/login)
