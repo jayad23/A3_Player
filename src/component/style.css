@@ -17,11 +17,11 @@
   }
 } */
 
-@media screen and (max-width: 530px) {
+/* @media screen and (max-width: 530px) {
   .react-player{
-    height: 274px !important;
+    height: 100% !important;
   }
-}
+} */
 
 .custom_search_input:-webkit-autofill {
   background: transparent !important;
