@@ -7,7 +7,7 @@ const initialState = {
 	middleRightGlassedColumn: {},
 	musicLeftContainer: {},
 	videoPlayerStyles: {
-		height: "46.5vh",
+		height: "46.5vh", //38.5vh
 		position: "relative",
 	},
 	playingInformation: {
