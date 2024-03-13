@@ -23,12 +23,16 @@ const style = {
   width: "90%",
   bgcolor: "#000000c5",
   //height: "100%",
-  height: "82vh",
-  overflow: "hidden",
-  //border: "2px solid rgba(32,198,190,1)",
+  height: "calc(100vh - 20px)",
+  overflow: "auto",
+  border: "2px solid rgba(32,198,190,1)",
   boxShadow: 24,
-  p: 4,
-  borderRadius: "10px"
+  padding: "20px 26px",
+  borderRadius: "10px",
+  "&::-webkit-scrollbar": {
+    display: "none",
+  }
+
 };
 
 
@@ -87,8 +91,11 @@ const CreateNewPlaylistMobile = () => {
       toast.error("Please select a playlist name and at least one song");
       return;
     }
-    onUpdatePlaylistsVideos(newPlaylistValues.playlistName, {
+    const newPlaylistId = v4();
+    onUpdatePlaylistsVideos(newPlaylistId, {
+      id: newPlaylistId,
       thumbnail: newPlaylistValues.thumbnail,
+      name: newPlaylistValues.playlistName,
       songs: newPlaylistValues.songs,
       author: localStorage.getItem("userId"),
     });
@@ -264,7 +271,7 @@ const CreateNewPlaylistMobile = () => {
             component="section"
             sx={{
               mt: 2,
-              height: "200px",
+              height: "47%",
               overflow: "auto",
               "&::-webkit-scrollbar": {
                 display: "none",
