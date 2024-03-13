@@ -65,7 +65,7 @@ export const SongsCardContainer = styled.div`
   background: rgba(138, 136, 136, 0.2);
 
   @media screen and ((max-width:600px)){
-    height: 68px;
+    height: 71px;
   }
 `;
 

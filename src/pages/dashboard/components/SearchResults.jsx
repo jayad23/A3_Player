@@ -35,7 +35,7 @@ const SongsCard = ({ length, songName, img, onSelectVideo, videoUrl, theyShouldB
   return (
     <SongsCardContainer
       style={length === 1 ?
-        { height: "225px", cursor: matches ? "pointer" : "default", border: matches && isAdded ? "1px solid rgba(32, 198, 190, 1)" : "none" } :
+        { height: "auto", cursor: matches ? "pointer" : "default", border: matches && isAdded ? "1px solid rgba(32, 198, 190, 1)" : "none" } :
         { cursor: matches ? "pointer" : "default", border: matches && isAdded ? "1px solid rgba(32, 198, 190, 1)" : "none" }
       }
     >
@@ -43,10 +43,11 @@ const SongsCard = ({ length, songName, img, onSelectVideo, videoUrl, theyShouldB
         <div
           style={{
             //width: "30%",
-            width: matches ? "23%" : "30%",
+            //width: matches ? "23%" : "30%",
             cursor: "pointer",
             overflow: "hidden",
-            height: length === 1 ? "100%" : matches ? "61px" : "65px",
+            height: length === 1 ? "auto" : matches ? "61px" : "65px",
+            //height: "auto"
           }}
           onClick={() => onSelectVideo(videoUrl)}
         >
@@ -54,7 +55,8 @@ const SongsCard = ({ length, songName, img, onSelectVideo, videoUrl, theyShouldB
             src={img}
             style={{
               width: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
+              height: "100%",
             }}
             alt={songName}
           />
@@ -62,22 +64,23 @@ const SongsCard = ({ length, songName, img, onSelectVideo, videoUrl, theyShouldB
         <Box
           component={"div"}
           sx={{
-            width: matches ? "73%" : "70%",
+            //width: matches ? "73%" : "70%",
+            width: "100%",
             //width: "70%",
             display: "flex",
-            flexDirection: "column",
+            // flexDirection: "column",
             justifyContent: "space-between",
           }}
           onClick={onAddSong}
         >
           {
             matches ? (
-              <Typography variant="caption">
+              <Typography sx={{ width: "100%", height: "100%", overflow: "auto" }} variant="caption">
                 {songName}
               </Typography>
             ) : (
               <Fragment>
-                <Typography variant="caption">
+                <Typography sx={{ width: "87%", height: "100%", overflow: "auto" }} variant="caption">
                   {songName}
                 </Typography>
                 {
