@@ -42,6 +42,7 @@ export const useManagerSubCollections = (sub_collection) => {
 
 	useEffect(() => {
 		onGetPlaylistsVideosData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sub_collection]);
 
 	return {

@@ -28,7 +28,7 @@ export const AppRouter = () => {
       }
     };
     onCheck();
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tokenChanged]);
 
   return (

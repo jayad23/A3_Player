@@ -40,6 +40,7 @@ export const useMusicManager = () => {
 			}
 			dispatch(onPausePlay(null));
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pause_play]);
 
 	return {

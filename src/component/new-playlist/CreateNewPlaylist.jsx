@@ -65,6 +65,7 @@ const CreateNewPlaylist = ({ isMobile }) => {
       setPlaylistName(playsListInformation.playlistName);
       setImage(playsListInformation.playlistImage);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playsListInformation]);
 
   const handleImageClick = () => {
